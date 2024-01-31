@@ -7,7 +7,7 @@ const colors = {
     300: "#333333",
   },
   green: {
-    100: "#6BEFA3",
+    100: "#11C45C",
     200: "#5AAD7D",
   },
   purple: "#8666EF",

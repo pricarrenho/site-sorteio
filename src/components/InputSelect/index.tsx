@@ -1,21 +1,28 @@
+import { useGlobalContext } from "../../context/GlobalContext";
 import * as S from "./styles";
 
 export const InputSelect = () => {
+  const { handleChosenDraw } = useGlobalContext();
+
   return (
     <S.InputSelectWrapper>
       <S.Label htmlFor="select">
-        Qual sorteio você deseja ver os resultados?
+        Qual sorteio você deseja ver o resultado?
       </S.Label>
 
-      <S.Select name="select">
-        <option value="valor1" disabled>
+      <S.Select
+        name="select"
+        defaultValue="initialValue"
+        onChange={(event) => handleChosenDraw(event.target.value)}
+      >
+        <option value="initialValue" disabled>
           Escolha um sorteio
         </option>
-        <option value="valor1">MEGA-SENA</option>
-        <option value="valor2">QUINA</option>
-        <option value="valor3">LOTOFACIL</option>
-        <option value="valor3">LOTOMANIA</option>
-        <option value="valor3">TIMEMANIA</option>
+        <option value="mega-sena">MEGA-SENA</option>
+        <option value="quina">QUINA</option>
+        <option value="lotofacil">LOTOFACIL</option>
+        <option value="lotomania">LOTOMANIA</option>
+        <option value="timemania">TIMEMANIA</option>
       </S.Select>
     </S.InputSelectWrapper>
   );
