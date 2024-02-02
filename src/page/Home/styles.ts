@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import { DefaultTheme } from "styled-components/dist/types";
 import { Select } from "../../components/InputSelect/styles";
+import { LotteryColors } from "../../types/lottery";
 
 export const HomeWrapper = styled.div`
   ${() => css``}
@@ -10,7 +11,7 @@ export const HomeContainer = styled.div`
   ${() => css`
     display: grid;
     grid-template-columns: 1fr;
-    height: 100vh;
+    height: 100dvh;
 
     @media (min-width: 700px) {
       grid-template-columns: 6fr 8fr;
@@ -19,11 +20,11 @@ export const HomeContainer = styled.div`
 `;
 
 type LeftContentProps = {
-  color: "white" | "green" | "purple" | "pink" | "orange" | "darkGreen";
+  color: LotteryColors;
 };
 
 const LeftContentModifier = {
-  white: (theme: DefaultTheme) => css`
+  default: (theme: DefaultTheme) => css`
     background: radial-gradient(
       circle at 330%,
       #efefef 73.9%,
@@ -109,6 +110,8 @@ export const RightContent = styled.div`
     background-color: ${theme.colors.neutral[100]};
   `}
 `;
+
+export const EmptySpace = styled.div``;
 
 export const ResultContent = styled.div`
   ${() => css`

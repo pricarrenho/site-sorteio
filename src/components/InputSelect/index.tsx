@@ -1,19 +1,26 @@
-import { useGlobalContext } from "../../context/GlobalContext";
+import { useGlobalContext } from "../../hooks/useGlobalContext";
+import { LotteryTypes } from "../../types/lottery";
 import * as S from "./styles";
 
 export const InputSelect = () => {
-  const { handleChosenDraw } = useGlobalContext();
+  const { handleChosenDraw, selectedLottery } = useGlobalContext();
+
+  const handleInputChange = (inputValue: LotteryTypes) => {
+    handleChosenDraw(inputValue);
+  };
 
   return (
     <S.InputSelectWrapper>
       <S.Label htmlFor="select">
-        Qual sorteio você deseja ver o resultado?
+        Qual sorteio você deseja gerar os números?
       </S.Label>
 
       <S.Select
         name="select"
-        defaultValue="initialValue"
-        onChange={(event) => handleChosenDraw(event.target.value)}
+        value={selectedLottery}
+        onChange={(event) =>
+          handleInputChange(event.target.value as LotteryTypes)
+        }
       >
         <option value="initialValue" disabled>
           Escolha um sorteio

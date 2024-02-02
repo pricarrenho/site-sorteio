@@ -1,10 +1,11 @@
 import { ReactElement } from "react";
+import { LotteryTypes } from "../types/lottery";
 
 export type GlobalProviderProps = {
   children: ReactElement;
 };
 
 export type GlobalContextType = {
-  inputValue: string;
-  handleChosenDraw: (value: string) => void;
+  selectedLottery: LotteryTypes;
+  handleChosenDraw: (value: LotteryTypes) => void;
 };
