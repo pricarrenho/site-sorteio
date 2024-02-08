@@ -7,12 +7,12 @@ const colors = {
     300: "#333333",
   },
   green: {
-    100: "#11C45C",
-    200: "#5AAD7D",
+    100: "#047031",
+    200: "#116032",
   },
-  purple: "#8666EF",
-  pink: "#DD7AC6",
-  orange: "#FFAB64",
+  purple: "#583cb2",
+  pink: "#681e55",
+  orange: "#964713",
 };
 
 const font = {

@@ -5,7 +5,12 @@ export const InputSelectWrapper = styled.div`
     css`
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      align-items: center;
+      gap: 16px;
+
+      @media (min-width: 700px) {
+        align-items: start;
+      }
     `}
 `;
 
@@ -14,6 +19,11 @@ export const Label = styled.label`
     color: ${theme.colors.neutral[100]};
     font-size: ${theme.font.sizes.md};
     font-weight: bold;
+    text-align: center;
+
+    @media (min-width: 700px) {
+      text-align: start;
+    }
   `}
 `;
 

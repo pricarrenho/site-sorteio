@@ -4,8 +4,14 @@ import { useHome } from "./useHome";
 import * as S from "./styles";
 
 export const Home = () => {
-  const { color, isInitialValue, title, lotteryNumbers, generateNewNumbers } =
-    useHome();
+  const {
+    color,
+    isInitialValue,
+    title,
+    lotteryNumbers,
+    generateNewNumbers,
+    logo,
+  } = useHome();
 
   return (
     <S.HomeWrapper>
@@ -15,7 +21,12 @@ export const Home = () => {
             <InputSelect />
           </S.InputContainer>
 
-          <S.Title>{title}</S.Title>
+          {title && (
+            <S.TitleContainer>
+              <S.Image src={logo} alt={`Logo do sorteio ${title}`} />
+              <S.Title>{title}</S.Title>
+            </S.TitleContainer>
+          )}
         </S.LeftContent>
 
         <S.RightContent>

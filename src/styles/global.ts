@@ -2,6 +2,10 @@ import { createGlobalStyle, css } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   ${({ theme }) => css`
+    * {
+      box-sizing: border-box;
+    }
+
     body,
     h1,
     h2,
@@ -10,7 +14,6 @@ export const GlobalStyle = createGlobalStyle`
     p {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html,

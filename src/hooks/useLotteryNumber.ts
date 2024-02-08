@@ -1,6 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
 import { LotteryColors, LotteryTypes } from "../types/lottery";
 
+import megasenaLogo from "../assets/logo-mega-sena.png";
+import quinaLogo from "../assets/logo-quina.png";
+import lotofacilLogo from "../assets/logo-lotofacil.png";
+import lotomaniaLogo from "../assets/logo-lotomania.png";
+import timemanialogo from "../assets/logo-timemania.png";
+
 type UseLotteryNumberProps = LotteryTypes;
 
 type LotteryLibrary = {
@@ -8,6 +14,7 @@ type LotteryLibrary = {
     color: LotteryColors;
     totalNumbers: number;
     numbersDrawn: number;
+    logo?: string;
   };
 };
 
@@ -21,26 +28,31 @@ const lotteryLibrary: LotteryLibrary = {
     color: "green",
     totalNumbers: 60,
     numbersDrawn: 6,
+    logo: megasenaLogo,
   },
   quina: {
     color: "purple",
     totalNumbers: 80,
     numbersDrawn: 15,
+    logo: quinaLogo,
   },
   lotofacil: {
     color: "pink",
     totalNumbers: 25,
     numbersDrawn: 20,
+    logo: lotofacilLogo,
   },
   lotomania: {
     color: "orange",
     totalNumbers: 50,
     numbersDrawn: 19,
+    logo: lotomaniaLogo,
   },
   timemania: {
     color: "darkGreen",
     totalNumbers: 80,
     numbersDrawn: 10,
+    logo: timemanialogo,
   },
 };
 
@@ -86,5 +98,6 @@ export const useLotteryNumber = (lottery: UseLotteryNumberProps) => {
     name: lottery,
     color: currentLottery.color,
     generateNewNumbers,
+    logo: currentLottery.logo,
   };
 };
